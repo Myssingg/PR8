@@ -1,0 +1,43 @@
+﻿<Window x:Class="BorDer_PR8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BorDer_PR8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="400" Margin="25">
+        <DockPanel Height="25" Margin="0,0,0,15">
+            <Label Content="Канцтовары" Width="150" />
+            <ComboBox Width="240" HorizontalAlignment="Right" x:Name="comboBox_stationaries" DisplayMemberPath="Name" SelectionChanged="comboBox_stationaries_SelectionChanged" />
+        </DockPanel>
+        <DockPanel Height="25" Margin="0,0,0,15">
+            <Label Content="Количество" Width="150" />
+            <TextBox HorizontalAlignment="Right" Width="240" x:Name="textBox_Count" TextChanged="textBox_Count_TextChanged"/>
+        </DockPanel>
+        <DockPanel Margin="0,10,0,15">
+           <Label Content="Сумма покупки"  />
+            <TextBox x:Name="textBox_Summ" HorizontalAlignment="Right" Width="240" IsEnabled="False"/> 
+        </DockPanel>
+
+        <DockPanel Height="25" Margin="0,0,0,15">
+            <Label Content="Сумма принято" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox_SummTaken" HorizontalAlignment="Right" Width="240"/>
+        </DockPanel>
+        <DockPanel Height="25" Margin="0,0,0,15">
+            <Label Content="Скидка (в %)" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox_Discount" Width="240" HorizontalAlignment="Right"/>
+        </DockPanel>
+        <DockPanel Height="25" Margin="0,0,0,15">
+            <Label Content="Сдача" VerticalAlignment="Top"/>
+            <TextBox IsEnabled="False" x:Name="textBox_Change" Width="240" HorizontalAlignment="Right"/>
+        </DockPanel>
+        <DockPanel Height="25">
+            <Button Content="Рассчитать" Click="Button_Click" x:Name="btn_Result" Width="150" Margin="25,0,0,0"/>
+            <Button Content="Сохранить" Click="Button_Click" x:Name="btn_Save" Width="150" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+        </DockPanel>
+        <Button Click="btn_Check_Click" HorizontalAlignment="Center" Content="Сохранить чек" x:Name="btn_Check" Visibility="Collapsed" Width="150" Margin="0,25,0,0" Height="25"/>
+
+
+    </StackPanel>
+</Window>
